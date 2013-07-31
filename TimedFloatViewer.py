@@ -176,7 +176,9 @@ class TimedFloatViewer(OpenRTM_aist.DataFlowComponentBase):
 		#
 		#
 	def onExecute(self, ec_id):
-	
+		if self._inIn.isNew():
+			data = self._inIn.read()
+			print data.data
 		return RTC.RTC_OK
 	
 	#	##
